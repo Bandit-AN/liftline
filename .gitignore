@@ -1,0 +1,9 @@
+node_modules
+.next
+.env*.local
+next-env.d.ts
+*.tsbuildinfo
+spa-dist
+site
+artifact
+.env.local

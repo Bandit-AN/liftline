@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@source "../../src";
+
+@theme {
+  --color-bg: #0f1012;
+  --color-surface: #16171a;
+  --color-surface-2: #1d1f23;
+  --color-surface-3: #25272c;
+  --color-line: #2a2c32;
+  --color-line-strong: #3a3d44;
+  --color-ink: #f5f6f7;
+  --color-muted: #9b9ea6;
+  --color-faint: #6b6e76;
+  --color-accent: #3df58c;
+  --color-accent-dim: #2bb868;
+  --color-accent-ink: #06210f;
+  --color-danger: #ff6b6b;
+  --color-warn: #f5c451;
+  --color-info: #6cb6ff;
+
+  --font-sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  --radius-xl: 14px;
+  --radius-2xl: 18px;
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-accent) 35%, transparent);
+}
+
+input,
+textarea,
+select {
+  color-scheme: dark;
+}
+
+/* Scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line-strong) transparent;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--color-surface-2) 0, var(--color-surface-3) 50%, var(--color-surface-2) 100%);
+  background-size: 200px 100%;
+  animation: shimmer 1.3s infinite linear;
+  border-radius: 10px;
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.toast-in { animation: toast-in 180ms ease-out; }
+
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
