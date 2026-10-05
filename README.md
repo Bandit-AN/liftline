@@ -32,7 +32,7 @@ Pushing to `main` runs `.github/workflows/pages.yml`, which builds the site (`sc
 
 One-time setup in the repo:
 1. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
-2. **Settings → Secrets and variables → Actions → Variables:** add `SUPABASE_URL` and `SUPABASE_ANON_KEY` (the project URL and publishable key — these are public by design; the AI key never goes here).
+2. Optional: to use a different Supabase project, add repo variables `SUPABASE_URL` and `SUPABASE_ANON_KEY` (public values; the AI key never goes here). Otherwise the workflow uses this project's defaults.
 3. In Supabase → Authentication → URL Configuration, set the Site URL to your Pages address.
 
 ## How permissions work
