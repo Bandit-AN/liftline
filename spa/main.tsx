@@ -11,6 +11,10 @@ import Login from "../src/app/login/page";
 import Signup from "../src/app/signup/page";
 import Reset from "../src/app/reset-password/page";
 import Invite from "../src/app/invite/[token]/page";
+import Privacy from "../src/app/privacy/page";
+import Terms from "../src/app/terms/page";
+import CoachTerms from "../src/app/coach-terms/page";
+import DeleteAccount from "../src/app/delete-account/page";
 import CoachLayout from "../src/app/coach/layout";
 import CoachHome from "../src/app/coach/page";
 import CoachClients from "../src/app/coach/clients/page";
@@ -41,6 +45,7 @@ type Layout = ComponentType<{ children: ReactNode }> | null;
 const ROUTES: [string, ComponentType, Layout][] = [
   ["/", Landing, null], ["/demo", Demo, null], ["/login", Login, null], ["/signup", Signup, null],
   ["/reset-password", Reset, null], ["/invite/:token", Invite, null],
+  ["/privacy", Privacy, null], ["/terms", Terms, null], ["/coach-terms", CoachTerms, null], ["/delete-account", DeleteAccount, null],
   ["/coach", CoachHome, CoachLayout], ["/coach/clients", CoachClients, CoachLayout], ["/coach/clients/:id", CoachClient, CoachLayout],
   ["/coach/check-ins", CoachCheckIns, CoachLayout], ["/coach/messages", CoachMessages, CoachLayout],
   ["/coach/workouts", CoachWorkouts, CoachLayout], ["/coach/workouts/:id", CoachWorkout, CoachLayout], ["/coach/exercises", CoachExercises, CoachLayout],

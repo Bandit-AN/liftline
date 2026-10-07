@@ -7,6 +7,7 @@ import { DemoRepo, loadDemoDb } from "@/lib/demo-repo";
 import { createAccountAndSignIn, SupabaseRepo, supabase } from "@/lib/supabase-repo";
 import type { InviteInfo } from "@/lib/repo";
 import { AuthShell } from "@/components/auth-shell";
+import Link from "next/link";
 import { Button, Field, Input, LinkButton, LoadingBlock, Segmented } from "@/components/ui";
 import { DemoBadge } from "@/components/brand";
 
@@ -165,6 +166,7 @@ export default function InvitePage() {
           </Field>
           {error && <p role="alert" className="text-sm text-danger">{error}</p>}
           <Button type="submit" variant="primary" size="lg" className="w-full" loading={busy}>{mode === "signup" ? "Create account & join" : "Sign in & join"}</Button>
+        <p className="text-xs text-faint">By continuing you agree to the <Link href="/terms" className="underline">Terms</Link> and <Link href="/privacy" className="underline">Privacy Policy</Link>, and consent to Liftline processing the health and fitness data you enter.</p>
         </form>
       )}
     </AuthShell>

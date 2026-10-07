@@ -1,4 +1,5 @@
 "use client";
+import { LegalLinks } from "@/components/legal-page";
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -96,6 +97,7 @@ export default function Landing() {
       <footer className="mt-16 border-t border-line pt-6 text-xs text-faint">
         Liftline · Built for online coaches.
         <Button variant="ghost" size="sm" className="ml-2" onClick={() => router.push("/demo")}>Demo accounts</Button>
+        <LegalLinks className="mt-3" />
       </footer>
     </main>
   );

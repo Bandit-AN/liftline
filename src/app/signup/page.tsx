@@ -67,6 +67,7 @@ export default function Signup() {
         </Field>
         {error && <p role="alert" className="text-sm text-danger">{error}</p>}
         <Button type="submit" variant="primary" size="lg" loading={busy} className="w-full">Create account</Button>
+        <p className="text-xs text-faint">By continuing you agree to the <Link href="/terms" className="underline">Terms</Link>, <Link href="/coach-terms" className="underline">Coach Agreement</Link> and <Link href="/privacy" className="underline">Privacy Policy</Link>, and consent to Liftline processing the health and fitness data you enter.</p>
         <p className="text-center text-xs text-faint">Are you a client? Use the invite link from your coach.</p>
       </form>
     </AuthShell>
